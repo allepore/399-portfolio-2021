@@ -19,16 +19,34 @@ h1{
     color: black;
 }
 
+.explanation{
+    padding-bottom: 20px;
+}
+
+h2, h3{
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+.portfolio_intro{
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+
+}
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
     overflow: hidden;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   
   /* Style the links inside the navigation bar */
   .topnav a {
     float: left;
-    color: #f2f2f2;
     color: skyblue;
     text-align: center;
     padding: 14px 16px;
@@ -53,10 +71,53 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    height: 20px;
     background-color: #333;
     color: white;
     text-align: center;
+    padding: 10px;
   }
+
+a .skip{
+    left: 0;
+    background: lightpink;
+    height: 30px;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+  
+a .skip:focus, a.skip:active {
+    transform: translateY(0%);
+  }
+
+  /* a.skip {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+
+
+a.skip:focus, a.skip:active {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ff6060f1;
+    background-color:rgb(0, 20, 107);
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+  } */
 
 .intro{
     margin: 0px;
@@ -68,25 +129,31 @@ footer {
 }
 
 .hello{
+    margin: 20px;
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 10px;
     font-size: 20px;
-    padding: 10px 25px 0px 20px;
+    padding: 10px;
     color: black;
+    background-color:white;
 }
 
 #blurb{
+    margin: 30px;
     position: absolute;
-    top: 150px;
-    left: 10px;
+    top: 160px;
+    left: 0px;
     font-size: 13px;
-    padding: 10px 25px 0px 20px;
+    padding: 10px;
     color: black;
+    background-color: white;;
 }
 
 .projects{
     margin:20px;
+    padding-top: 10px;
+    padding-bottom: 50px;
 }
 
 .Intern_Connect{
@@ -103,11 +170,15 @@ footer {
     color: white;
 }
 
-#display {
+#display1 {
     width: 100%;
 }
 
-#Project_Name{
+#display2 {
+    width: 100%;
+}
+
+.Project_Name{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -124,10 +195,137 @@ footer {
     margin: 20px;
 }
 
-.screens{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-row-gap: 15px;
-    grid-column-gap: 5px; 
+/* .explanation{
+    padding-bottom: 20px;
+} */
+
+@media only screen and (max-width: 800px){
+    .screens{
+        display:grid;
+        width: 100px;
+        height: 100px;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: 10px;
+        justify-items: center;
+    }
+    #screen1{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #screen2{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    #screen3{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    #screen4{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    #screen5{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #screen6{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+    }
+
+    #screen7{
+        width: 200px;
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+    }
+
+    #screen8{
+        width: 200px;
+        grid-row: 4 / 5;
+        grid-column: 2 / 3;
+    }
+
+    #screen9{
+        width: 200px;
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .screens{
+        display:grid;
+        width: 100px;
+        height: 100px;
+        grid-template-columns: repeat(1, 355px);
+        grid-template-rows: repeat(9, 1fr);
+        grid-gap: 10px;
+        justify-items: center;
+    }
+
+    #screen1{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #screen2{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    #screen3{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #screen4{
+        width: 200px;
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+    }
+
+    #screen5{
+        width: 200px;
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+    }
+
+    #screen6{
+        width: 200px;
+        grid-row: 6 / 7;
+        grid-column: 1 / 2;
+    }
+
+    #screen7{
+        width: 200px;
+        grid-row: 7 / 8;
+        grid-column: 1 / 2;
+    }
+
+    #screen8{
+        width: 200px;
+        grid-row: 8 / 9;
+        grid-column: 1 / 2;
+    }
+
+    #screen9{
+        width: 200px;
+        grid-row: 9 / 10;
+        grid-column: 1 / 2;
+    }
 }
