@@ -9,28 +9,68 @@
 	
 </head>
 <body>
+	<a class="skip" href="#main">
+		Skip to content
+	</a>
     <header>
 		<h1>About Me</h1>
 		<div class="topnav">
 			<a href="portfolio.html">Home</a>
 			<a class="active" href="aboutme.html">About Me</a>
 			<a href="Alexandra Lepore _ Resume 2021.pdf" target="_blank">Resume</a>
+			<a href="contact.html">Contact Me</a>
 		</div>
 	</header>
-		<!-- <a class="skip" href="#main">
-			Skip to content
-		</a> -->
-
-	<main class = "intro">
-		<a class="skip" href="#main">
-			Skip to content
-		</a>
-		<img id="image1" src="imgs/sc.jpeg" alt="" />
-		<h2 class = "hello" >Hi, I'm Alex!</h2>
-		<p id = "blurb">I'm a junior at the University of Michigan studying Information Sciences with a concentration in User Experience 
-			and a minor in Entrepreneurship. I am passionate about passionate about the intersection of technology, design, and start up culture. 
-			I strive to use my design skills to create effective digital products that solve pressing real word issues. 
-		</p>
+	
+	<main id ="main">
+		<div class = "intro" > 
+			<div class="me">
+				<h2 class = "hello" >Hi, I'm Alex!</h2>
+				<p class = "blurb">I'm a junior at the University of Michigan studying Information Sciences with a concentration in User Experience 
+					and a minor in Entrepreneurship. I am passionate about passionate about the intersection of technology, design, and start up culture. 
+					I strive to use my design skills to create effective digital products that solve pressing real word issues. 
+				</p>
+				<h2 class = "hello" >Hobbies</h2>
+				<p class = "blurb">Outside of school, my hobbies include painting, running, photogrpahy, and traveling. In the past few years I have 
+			really dedicated time to traveland continue to do so more in my study abroad program next semester. Below, I have included some photos 
+			from sifferent places I have traveled to.		
+			</p>
+			</div>
+			<img id="image1" src="imgs/nobackground.jpeg" alt="" />
+		</div>
+		<div class="travel">
+			<div tabindex =0 class="flipcard">
+				<div class="content">
+					<div class = "front"> 
+						<img id="italy" src="imgs/italy.jpeg" alt="" />
+					</div>
+					<div class="back">
+						<p>Lake Como, Italy</p>
+					</div>
+				</div>
+			</div>
+			<div tabindex =0 class="flipcard">
+				<div class="content">
+					<div class = "front"> 
+						<img id="israel" src="imgs/israel.jpeg" alt="" />
+					</div>
+					<div class="back">
+						<p>Tel Aviv, Israel</p>
+					</div>
+				</div>
+			</div>
+			<div tabindex =0 class="flipcard">
+				<div class="content">
+					<div class = "front"> 
+						<img id="spain" src="imgs/Spain.jpeg" alt="" />
+					</div>
+					<div class="back">
+						<p>Seville, Spain</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	</main>
 	<footer>
 		<p> Alexanda Lepore SI 339 Portfolio</p>

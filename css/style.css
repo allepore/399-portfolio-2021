@@ -3,7 +3,26 @@ body{
     margin: 0;
     padding: 0;
     background-color: white;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    height: 100%;
+
 }
+
+.parallax {
+    /* The image used */
+    background-image: url("../imgs/Michigan.jpg");
+  
+    /* Set a specific height */
+    min-height: 400px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 
 header{
     background-color: white;
@@ -11,13 +30,34 @@ header{
     margin: 0;
 }
 
-h1{
-    margin: 0;
-    padding: 20px 30px 10px 30px;
+/* animation */
+
+h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid pink; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
     font-size: 30px;
+    color: purple;
     font-weight: 500;
-    color: black;
-}
+    padding: 20px 30px 10px 30px;
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: pink; }
+  }
 
 .explanation{
     padding-bottom: 20px;
@@ -26,6 +66,8 @@ h1{
 h2, h3{
     padding-top: 20px;
     padding-bottom: 20px;
+    font-size: 20px;
+    color: purple;
 
 }
 .portfolio_intro{
@@ -75,80 +117,42 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
   }
 
-a .skip{
-    left: 0;
-    background: lightpink;
-    height: 30px;
-    padding: 8px;
+/* skip to content  */
+a.skip{
     position: absolute;
-    transform: translateY(-100%);
-    transition: transform 0.3s;
-  }
-  
-a .skip:focus, a.skip:active {
-    transform: translateY(0%);
-  }
-
-  /* a.skip {
-    left:-999px;
-    position:absolute;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-    z-index:-999;
+    top: -5000px;
+    left: -500px;
 }
 
+a.skip:focus{
+    top: 0px;
+    left: 0px;
+}
 
-a.skip:focus, a.skip:active {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #ff6060f1;
-    background-color:rgb(0, 20, 107);
-    left: auto;
-    top: auto;
-    width: 30%;
-    height: auto;
-    overflow:auto;
-    margin: 10px 35%;
-    padding:5px;
-    text-align:center;
-    font-size:1.2em;
-    z-index:999;
-  } */
-
+ /* about me  */
 .intro{
-    margin: 0px;
-    padding: 20px;
+    display:flex;
+    /* width: 100%; */
+    margin: 20px;
+    padding: 40px;
 }
 
 #image1{
-    width: 100%;
+    width: 40%;
+    height: 50%;
 }
 
+.me{
+    width: 60%;
+}
 .hello{
-    margin: 20px;
-    position: absolute;
-    top: 130px;
-    left: 10px;
     font-size: 20px;
-    padding: 10px;
-    color: black;
-    background-color:white;
 }
 
-#blurb{
-    margin: 30px;
-    position: absolute;
-    top: 160px;
-    left: 0px;
-    font-size: 13px;
-    padding: 10px;
-    color: black;
-    background-color: white;;
-}
+/* projects */
 
 .projects{
     margin:20px;
@@ -195,20 +199,148 @@ a.skip:focus, a.skip:active {
     margin: 20px;
 }
 
-/* .explanation{
-    padding-bottom: 20px;
-} */
+/* flipcards */
+
+.travel{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.flipcard{
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    border: 5px solid #333;
+    perspective: 1000px;
+}
+
+.content{
+    text-align: center;
+    vertical-align: center;
+    transition: transform 1.0s;
+    transform-style: preserve-3d;
+}
+
+.flipcard:hover .content{
+    transform: rotateY(180deg);
+}
+
+#italy{
+    width:300px;
+}
+
+#israel{
+    width:300px;
+}
+
+#spain{
+    width:300px;
+}
+
+.front, .back{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back{
+    transform: rotateY(180deg);
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-color: lightblue;
+    color:black;
+    font-size: 20px;
+    top:0; right:0; bottom:0; left:0;
+}
+
+.front{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 900px){
+
+    .travel{
+        flex-direction:column;
+        align-items: center;
+    }
+}
+
 
 @media only screen and (max-width: 800px){
     .screens{
         display:grid;
-        width: 100px;
-        height: 100px;
-        grid-template-columns: repeat(2, 300px);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(3, 1fr);
         grid-gap: 10px;
         justify-items: center;
     }
+    #screen1{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #screen2{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    #screen3{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+    }
+
+    #screen4{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    #screen5{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    #screen6{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+    }
+
+    #screen7{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #screen8{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+    }
+
+    #screen9{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .screens{
+        display:grid;
+        grid-template-columns: repeat(2, 200px);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: 10px;
+    }
+
     #screen1{
         width: 200px;
         grid-row: 1 / 2;
@@ -263,16 +395,15 @@ a.skip:focus, a.skip:active {
         grid-column: 1 / 2;
     }
 }
-
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 400px){
+    #image1{
+        display: none;
+    }
     .screens{
         display:grid;
-        width: 100px;
-        height: 100px;
-        grid-template-columns: repeat(1, 355px);
+        grid-template-columns: repeat(1, px);
         grid-template-rows: repeat(9, 1fr);
         grid-gap: 10px;
-        justify-items: center;
     }
 
     #screen1{
@@ -327,5 +458,85 @@ a.skip:focus, a.skip:active {
         width: 200px;
         grid-row: 9 / 10;
         grid-column: 1 / 2;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    .screens{
+        display:grid;
+        grid-template-columns: repeat(4, 200px);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        justify-items: center;
+    }
+    #screen1{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #screen2{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    #screen3{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 3 / 4;
+    }
+
+    #screen4{
+        width: 200px;
+        grid-row: 1 / 2;
+        grid-column: 4 / 5;
+    }
+
+    #screen5{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    #screen6{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    #screen7{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+    }
+
+    #screen8{
+        width: 200px;
+        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+    }
+
+    #screen9{
+        width: 200px;
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    h1{
+        animation:none;
+    }
+
+    .parallax{
+        height: 400px;
+        /* margin-top: 20px; */
+        background-attachment: scroll;
+        background-image: url("../imgs/Michigan.jpg");
+    } 
+
+    .flipcard:hover .content{
+        transform: none;
     }
 }
